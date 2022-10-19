@@ -5,5 +5,5 @@ require("dotenv").config();
 
 mongoose.connect(process.env.MONGO_URL).then(()=>(console.log("mongodb database connected successfully")));
 
-
-app.listen(3500,()=>(console.log("port running successfully in 3500.....")));
+let port = process.env.PORT || 3000
+app.listen(port,()=>(console.log("port running successfully in 3500.....")));
