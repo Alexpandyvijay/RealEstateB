@@ -42,7 +42,7 @@ router.post("/signup",async(req,res)=>{
     }
 })
 
-router.post("/login", async (req, res) => {
+router.post("/", async (req, res) => {
     const { email, password } = req.body;
   
     const user = await User.findOne({ email });
@@ -82,7 +82,7 @@ router.get("/display" , async (req, res)=>{
     }
 })
 
-router.post("/addproperty", async (req,res)=>{
+router.post("/display", async (req,res)=>{
     let value = isAuth(req);
     if(value==="navigate to login page"){
         res.status(401).json({
